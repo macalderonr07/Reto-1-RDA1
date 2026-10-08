@@ -1,0 +1,474 @@
+{
+    "empresa": {
+        "nombre": "Comercial Elite",
+        "eslogan": "Insumos para calzado y marroquinería en Quito",
+        "telefono": "+593987855906",
+        "telefonoVisible": "098 785 5906",
+        "telefonoFijo": "+59320000000",
+        "telefonoFijoVisible": "(02) 000 0000",
+        "correo": "comercialelite313@gmail.com",
+        "direccion": "Calle Esmeraldas y Venezuela, Quito, Ecuador",
+        "horario": [
+            { "dias": "Lunes a viernes", "horas": "06:30 – 17:30" },
+            { "dias": "Sábado", "horas": "07:00 – 13:30" }
+        ]
+    },
+    "categorias": [
+        { "slug": "cueros", "nombre": "Cueros" },
+        { "slug": "sinteticos", "nombre": "Sintéticos" },
+        { "slug": "suelas", "nombre": "Suelas" },
+        { "slug": "plantillas", "nombre": "Plantillas" },
+        { "slug": "hilos", "nombre": "Hilos" },
+        { "slug": "adhesivos", "nombre": "Adhesivos" },
+        { "slug": "herrajes", "nombre": "Herrajes" },
+        { "slug": "herramientas", "nombre": "Herramienta menor" }
+    ],
+    "productos": [
+        {
+            "id": "CE-1042",
+            "nombre": "Cuero graso natural",
+            "categoria": "cueros",
+            "subcategoria": "Vacuno",
+            "presentacion": "Banda 18-29 pies",
+            "precio": 52.00,
+            "colores": ["Negro", "Café", "Miel"],
+            "uso": "Calzado casual y marroquinería",
+            "imagen": "assets/img/ce-1042-cuero-graso.webp",
+            "alt": "Plancha de cuero graso natural color miel sobre mesa de trabajo",
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-1042-cuero-graso.webp",
+                    "alt": "Plancha de cuero graso natural color miel sobre mesa de trabajo"
+                },
+                {
+                    "src": "assets/img/ce-1042-cuero-graso-colores.webp",
+                    "alt": "Muestrario de colores de Cuero graso natural: Negro, Café, Miel"
+                },
+                {
+                    "src": "assets/img/ce-1042-cuero-graso-ficha.webp",
+                    "alt": "Ficha rápida de Cuero graso natural: presentación Banda 18-29 pies"
+                }
+            ],
+            "novedad": true,
+            "fechaIngreso": "2026-09-15"
+        },
+        {
+            "id": "CE-1043",
+            "nombre": "Cuero napa flor entera",
+            "categoria": "cueros",
+            "subcategoria": "Vacuno",
+            "presentacion": "Banda 18-29 pies",
+            "precio": 58.50,
+            "colores": ["Negro", "Café", "Camel"],
+            "uso": "Calzado formal y marroquinería fina",
+            "imagen": "assets/img/ce-1043-cuero-napa.png",
+            "alt": "Plancha de cuero napa flor entera color camel",
+            "imagenes": [
+                { "src": "assets/img/ce-1043-cuero-napa.png", "alt": "Plancha de cuero napa flor entera color camel" },
+                {
+                    "src": "assets/img/ce-1043-cuero-napa-colores.webp",
+                    "alt": "Muestrario de colores de Cuero napa flor entera: Negro, Café, Camel"
+                },
+                {
+                    "src": "assets/img/ce-1043-cuero-napa-ficha.webp",
+                    "alt": "Ficha rápida de Cuero napa flor entera: presentación Banda 18-29 pies"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-06-02"
+        },
+        {
+            "id": "CE-2010",
+            "nombre": "Sintético PU texturizado",
+            "categoria": "sinteticos",
+            "subcategoria": "Poliuretano",
+            "presentacion": "Rollo 1.4 m × 25 m",
+            "precio": 64.00,
+            "colores": ["Negro", "Blanco", "Café"],
+            "uso": "Calzado deportivo y casual",
+            "imagen": "assets/img/ce-2010-sintetico-pu.webp",
+            "alt": "Rollo de sintético de poliuretano texturizado color negro",
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-2010-sintetico-pu.webp",
+                    "alt": "Rollo de sintético de poliuretano texturizado color negro"
+                },
+                {
+                    "src": "assets/img/ce-2010-sintetico-pu-colores.webp",
+                    "alt": "Muestrario de colores de Sintético PU texturizado: Negro, Blanco, Café"
+                },
+                {
+                    "src": "assets/img/ce-2010-sintetico-pu-ficha.webp",
+                    "alt": "Ficha rápida de Sintético PU texturizado: presentación Rollo 1.4 m × 25 m"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-05-20"
+        },
+        {
+            "id": "CE-2011",
+            "nombre": "Sintético símil serpiente",
+            "categoria": "sinteticos",
+            "subcategoria": "Poliuretano estampado",
+            "presentacion": "Rollo 1.4 m × 20 m",
+            "precio": 69.00,
+            "colores": ["Negro", "Camel"],
+            "uso": "Calzado de vestir y marroquinería de moda",
+            "imagen": "assets/img/ce-2011-sintetico-serpiente.webp",
+            "alt": "Rollo de sintético estampado símil serpiente color camel",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-2011-sintetico-serpiente.webp",
+                    "alt": "Rollo de sintético estampado símil serpiente color camel"
+                },
+                {
+                    "src": "assets/img/ce-2011-sintetico-serpiente-colores.webp",
+                    "alt": "Muestrario de colores de Sintético símil serpiente: Negro, Camel"
+                },
+                {
+                    "src": "assets/img/ce-2011-sintetico-serpiente-ficha.webp",
+                    "alt": "Ficha rápida de Sintético símil serpiente: presentación Rollo 1.4 m × 20 m"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-04-11"
+        },
+        {
+            "id": "CE-3005",
+            "nombre": "Suela de caucho antideslizante modelo SR-220",
+            "categoria": "suelas",
+            "subcategoria": "Caucho",
+            "presentacion": "Par, tallas 35 a 44",
+            "precio": 3.20,
+            "colores": ["Negro"],
+            "uso": "Calzado de seguridad y trabajo",
+            "imagen": "assets/img/ce-3005-suela-sr220.webp",
+            "alt": "Par de suelas de caucho antideslizante modelo SR-220 color negro",
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-3005-suela-sr220.webp",
+                    "alt": "Par de suelas de caucho antideslizante modelo SR-220 color negro"
+                },
+                {
+                    "src": "assets/img/ce-3005-suela-sr220-colores.webp",
+                    "alt": "Muestrario de colores de Suela de caucho antideslizante modelo SR-220: Negro"
+                },
+                {
+                    "src": "assets/img/ce-3005-suela-sr220-ficha.webp",
+                    "alt": "Ficha rápida de Suela de caucho antideslizante modelo SR-220: presentación Par, tallas 35 a 44"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-03-10"
+        },
+        {
+            "id": "CE-3006",
+            "nombre": "Suela EVA liviana",
+            "categoria": "suelas",
+            "subcategoria": "EVA",
+            "presentacion": "Par, tallas 34 a 42",
+            "precio": 2.70,
+            "colores": ["Blanco", "Negro"],
+            "uso": "Calzado casual liviano",
+            "imagen": "assets/img/ce-3006-suela-eva.png",
+            "alt": "Par de suelas EVA livianas color blanco",
+            "imagenes": [
+                { "src": "assets/img/ce-3006-suela-eva.png", "alt": "Par de suelas EVA livianas color blanco" },
+                {
+                    "src": "assets/img/ce-3006-suela-eva-colores.webp",
+                    "alt": "Muestrario de colores de Suela EVA liviana: Blanco, Negro"
+                },
+                {
+                    "src": "assets/img/ce-3006-suela-eva-ficha.webp",
+                    "alt": "Ficha rápida de Suela EVA liviana: presentación Par, tallas 34 a 42"
+                }
+            ],
+            "novedad": true,
+            "fechaIngreso": "2026-09-02"
+        },
+        {
+            "id": "CE-4001",
+            "nombre": "Plantilla de armado prensada",
+            "categoria": "plantillas",
+            "subcategoria": "Armado",
+            "presentacion": "Par, tallas 34 a 45",
+            "precio": 1.20,
+            "colores": ["Natural"],
+            "uso": "Base interna para el proceso de armado",
+            "imagen": "assets/img/ce-4001-plantilla-armado.png",
+            "alt": "Par de plantillas de armado prensadas color natural",
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-4001-plantilla-armado.png",
+                    "alt": "Par de plantillas de armado prensadas color natural"
+                },
+                {
+                    "src": "assets/img/ce-4001-plantilla-armado-colores.webp",
+                    "alt": "Muestrario de colores de Plantilla de armado prensada: Natural"
+                },
+                {
+                    "src": "assets/img/ce-4001-plantilla-armado-ficha.webp",
+                    "alt": "Ficha rápida de Plantilla de armado prensada: presentación Par, tallas 34 a 45"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-02-18"
+        },
+        {
+            "id": "CE-4002",
+            "nombre": "Plantilla de terminado con látex",
+            "categoria": "plantillas",
+            "subcategoria": "Terminado",
+            "presentacion": "Par, tallas 34 a 45",
+            "precio": 1.45,
+            "colores": ["Beige"],
+            "uso": "Confort y terminado final del calzado",
+            "imagen": "assets/img/ce-4002-plantilla-latex.webp",
+            "alt": "Par de plantillas de terminado con látex color beige",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-4002-plantilla-latex.webp",
+                    "alt": "Par de plantillas de terminado con látex color beige"
+                },
+                {
+                    "src": "assets/img/ce-4002-plantilla-latex-colores.webp",
+                    "alt": "Muestrario de colores de Plantilla de terminado con látex: Beige"
+                },
+                {
+                    "src": "assets/img/ce-4002-plantilla-latex-ficha.webp",
+                    "alt": "Ficha rápida de Plantilla de terminado con látex: presentación Par, tallas 34 a 45"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2026-01-22"
+        },
+        {
+            "id": "CE-5001",
+            "nombre": "Hilo encerado de nylon 210D",
+            "categoria": "hilos",
+            "subcategoria": "Nylon",
+            "presentacion": "Cono 500 m",
+            "precio": 4.50,
+            "colores": ["Negro", "Café", "Blanco"],
+            "uso": "Costura de calzado y marroquinería",
+            "imagen": "assets/img/ce-5001-hilo-nylon.webp",
+            "alt": "Cono de hilo encerado de nylon 210D color café",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-5001-hilo-nylon.webp",
+                    "alt": "Cono de hilo encerado de nylon 210D color café"
+                },
+                {
+                    "src": "assets/img/ce-5001-hilo-nylon-colores.webp",
+                    "alt": "Muestrario de colores de Hilo encerado de nylon 210D: Negro, Café, Blanco"
+                },
+                {
+                    "src": "assets/img/ce-5001-hilo-nylon-ficha.webp",
+                    "alt": "Ficha rápida de Hilo encerado de nylon 210D: presentación Cono 500 m"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-12-05"
+        },
+        {
+            "id": "CE-5002",
+            "nombre": "Hilo de poliéster reforzado 30/3",
+            "categoria": "hilos",
+            "subcategoria": "Poliéster",
+            "presentacion": "Cono 1000 m",
+            "precio": 4.20,
+            "colores": ["Negro", "Blanco"],
+            "uso": "Costura de alta resistencia",
+            "imagen": "assets/img/ce-5002-hilo-poliester.webp",
+            "alt": "Cono de hilo de poliéster reforzado color negro",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-5002-hilo-poliester.webp",
+                    "alt": "Cono de hilo de poliéster reforzado color negro"
+                },
+                {
+                    "src": "assets/img/ce-5002-hilo-poliester-colores.webp",
+                    "alt": "Muestrario de colores de Hilo de poliéster reforzado 30/3: Negro, Blanco"
+                },
+                {
+                    "src": "assets/img/ce-5002-hilo-poliester-ficha.webp",
+                    "alt": "Ficha rápida de Hilo de poliéster reforzado 30/3: presentación Cono 1000 m"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-11-14"
+        },
+        {
+            "id": "CE-6001",
+            "nombre": "Adhesivo de contacto base solvente",
+            "categoria": "adhesivos",
+            "subcategoria": "Contacto",
+            "presentacion": "Galón 3.7 L",
+            "precio": 13.50,
+            "colores": ["Ámbar"],
+            "uso": "Pegado de suelas y componentes",
+            "imagen": "assets/img/ce-6001-adhesivo-contacto.webp",
+            "alt": "Galón de adhesivo de contacto base solvente color ámbar",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-6001-adhesivo-contacto.webp",
+                    "alt": "Galón de adhesivo de contacto base solvente color ámbar"
+                },
+                {
+                    "src": "assets/img/ce-6001-adhesivo-contacto-colores.webp",
+                    "alt": "Muestrario de colores de Adhesivo de contacto base solvente: Ámbar"
+                },
+                {
+                    "src": "assets/img/ce-6001-adhesivo-contacto-ficha.webp",
+                    "alt": "Ficha rápida de Adhesivo de contacto base solvente: presentación Galón 3.7 L"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-10-30"
+        },
+        {
+            "id": "CE-6002",
+            "nombre": "Cemento de poliuretano bicomponente",
+            "categoria": "adhesivos",
+            "subcategoria": "Poliuretano",
+            "presentacion": "Kit 1 kg",
+            "precio": 14.80,
+            "colores": ["Transparente"],
+            "uso": "Pegado de alta exigencia mecánica",
+            "imagen": "assets/img/ce-6002-cemento-pu.webp",
+            "alt": "Kit de cemento de poliuretano bicomponente",
+            "ilustracion": true,
+            "imagenes": [
+                { "src": "assets/img/ce-6002-cemento-pu.webp", "alt": "Kit de cemento de poliuretano bicomponente" },
+                {
+                    "src": "assets/img/ce-6002-cemento-pu-colores.webp",
+                    "alt": "Muestrario de colores de Cemento de poliuretano bicomponente: Transparente"
+                },
+                {
+                    "src": "assets/img/ce-6002-cemento-pu-ficha.webp",
+                    "alt": "Ficha rápida de Cemento de poliuretano bicomponente: presentación Kit 1 kg"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-09-19"
+        },
+        {
+            "id": "CE-7001",
+            "nombre": "Ojalillo metálico niquelado",
+            "categoria": "herrajes",
+            "subcategoria": "Ojalillos",
+            "presentacion": "Bolsa × 1000 u",
+            "precio": 0.90,
+            "colores": ["Plateado", "Dorado"],
+            "uso": "Cordonera de calzado y marroquinería",
+            "imagen": "assets/img/ce-7001-ojalillo.webp",
+            "alt": "Bolsa de ojalillos metálicos niquelados color plateado",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-7001-ojalillo.webp",
+                    "alt": "Bolsa de ojalillos metálicos niquelados color plateado"
+                },
+                {
+                    "src": "assets/img/ce-7001-ojalillo-colores.webp",
+                    "alt": "Muestrario de colores de Ojalillo metálico niquelado: Plateado, Dorado"
+                },
+                {
+                    "src": "assets/img/ce-7001-ojalillo-ficha.webp",
+                    "alt": "Ficha rápida de Ojalillo metálico niquelado: presentación Bolsa × 1000 u"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-08-08"
+        },
+        {
+            "id": "CE-7002",
+            "nombre": "Hebilla rectangular metálica",
+            "categoria": "herrajes",
+            "subcategoria": "Hebillas",
+            "presentacion": "Caja × 100 u",
+            "precio": 2.60,
+            "colores": ["Dorado", "Plateado", "Negro"],
+            "uso": "Cierre y decoración de marroquinería",
+            "imagen": "assets/img/ce-7002-hebilla.webp",
+            "alt": "Caja de hebillas rectangulares metálicas color dorado",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-7002-hebilla.webp",
+                    "alt": "Caja de hebillas rectangulares metálicas color dorado"
+                },
+                {
+                    "src": "assets/img/ce-7002-hebilla-colores.webp",
+                    "alt": "Muestrario de colores de Hebilla rectangular metálica: Dorado, Plateado, Negro"
+                },
+                {
+                    "src": "assets/img/ce-7002-hebilla-ficha.webp",
+                    "alt": "Ficha rápida de Hebilla rectangular metálica: presentación Caja × 100 u"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-07-01"
+        },
+        {
+            "id": "CE-8001",
+            "nombre": "Cuchilla de desbastar profesional",
+            "categoria": "herramientas",
+            "subcategoria": "Corte",
+            "presentacion": "Unidad",
+            "precio": 7.50,
+            "colores": ["Acero"],
+            "uso": "Desbastado de cuero en taller",
+            "imagen": "assets/img/ce-8001-cuchilla.webp",
+            "alt": "Cuchilla de desbastar profesional de acero",
+            "ilustracion": true,
+            "imagenes": [
+                { "src": "assets/img/ce-8001-cuchilla.webp", "alt": "Cuchilla de desbastar profesional de acero" },
+                {
+                    "src": "assets/img/ce-8001-cuchilla-colores.webp",
+                    "alt": "Muestrario de colores de Cuchilla de desbastar profesional: Acero"
+                },
+                {
+                    "src": "assets/img/ce-8001-cuchilla-ficha.webp",
+                    "alt": "Ficha rápida de Cuchilla de desbastar profesional: presentación Unidad"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-06-15"
+        },
+        {
+            "id": "CE-8002",
+            "nombre": "Martillo de zapatero cabeza doble",
+            "categoria": "herramientas",
+            "subcategoria": "Golpe",
+            "presentacion": "Unidad",
+            "precio": 8.90,
+            "colores": ["Madera y acero"],
+            "uso": "Armado y terminado de calzado",
+            "imagen": "assets/img/ce-8002-martillo.webp",
+            "alt": "Martillo de zapatero de cabeza doble con mango de madera",
+            "ilustracion": true,
+            "imagenes": [
+                {
+                    "src": "assets/img/ce-8002-martillo.webp",
+                    "alt": "Martillo de zapatero de cabeza doble con mango de madera"
+                },
+                {
+                    "src": "assets/img/ce-8002-martillo-colores.webp",
+                    "alt": "Muestrario de colores de Martillo de zapatero cabeza doble: Madera y acero"
+                },
+                {
+                    "src": "assets/img/ce-8002-martillo-ficha.webp",
+                    "alt": "Ficha rápida de Martillo de zapatero cabeza doble: presentación Unidad"
+                }
+            ],
+            "novedad": false,
+            "fechaIngreso": "2025-05-03"
+        }
+    ]
+}

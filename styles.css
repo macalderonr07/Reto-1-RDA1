@@ -1,0 +1,579 @@
+/* ==========================================================================
+   COMERCIAL ELITE — capa base sobre Tailwind (Play CDN)
+   ==========================================================================
+   Identidad visual reconstruida a partir de assets/img/logo.png: el verde
+   lima (#93DC1D) y el negro del sello son el punto de partida de toda la
+   paleta. El resto de tonos NO son arbitrarios: se calcularon en el mismo
+   matiz del logo (H≈83°) subiendo/bajando luminosidad hasta cumplir WCAG 2.2
+   nivel AA. Contrastes verificados (fórmula de luminancia relativa de WCAG):
+
+     Modo claro (fondo #FFFFFF / tinte #E9F4D7)
+       elite            #4E6E1C   5.88:1 sobre blanco · 5.15:1 sobre tinte   -> enlaces, texto interactivo
+       elite-medium      #3A5214  8.76:1 sobre blanco                        -> hover/active de enlaces y botones outline
+       elite-dark        #2B3913  12.37:1 sobre blanco                       -> encabezados, foco visible
+       elite-lime        #93DC1D  12.50:1 con texto NEGRO (#000/ink)         -> SOLO fondo de insignias/botones, nunca texto sobre blanco
+       elite-borderstrong #719438 3.50:1 sobre blanco                        -> borde de campos/checkboxes (WCAG 1.4.11, no decorativo)
+       elite-border      #A7C577  1.93:1 sobre blanco                        -> separadores puramente decorativos (nunca el único indicador)
+       elite-ink         #14170F  18.12:1 con blanco                         -> cabecera/pie, superficie "negra" del sello
+
+     Modo oscuro (fondo #0D100A / tinte #273414)
+       elitenight        #74A91E  6.79:1 sobre fondo · 4.68:1 sobre tinte
+       elitenight-medium #90C639  9.42:1 sobre fondo · 6.50:1 sobre tinte
+       elitenight-dark   #A6D161  10.87:1 sobre fondo · 7.50:1 sobre tinte
+       elitenight-border #5E7538  3.72:1 sobre fondo                        -> también sirve como borde de campos (ya cumple 1.4.11)
+
+     Acento "cuero" (carrito/precios): Comercial Elite vende cuero, así que el precio
+     y los totales del carrito usan un tono cálido derivado del propio producto en vez
+     de reutilizar el verde de marca para todo. Contraste verificado igual que arriba:
+       elite-cuero        #8B5E34  5.60:1 sobre blanco · 4.90:1 sobre elite-tint       -> texto de precio, borde de caja de totales
+       elitenight-cuero   #D9A066  8.37:1 sobre fondo oscuro · 5.78:1 sobre tinte oscuro
+       elite-cuerotint    #F2E4D4  fondo decorativo de caja de totales (no crítico, no lleva texto pequeño encima sin los colores de arriba)
+       elitenight-cuerotint #2E2013  equivalente oscuro de elite-cuerotint
+
+   Principios de IHC aplicados en este archivo y en las utilidades de Tailwind
+   del HTML (ver comentarios en cada página):
+     - Ley de Fitts: objetivos táctiles/clic >= 44px (min-h-11 / min-w-11).
+     - Ley de Hick: navegación a 4 opciones, filtros agrupados por categoría.
+     - Gestalt (proximidad/similitud): tarjetas con mismo marco visual
+       (shield-frame + verde lima) para agrupar por función, no solo por color.
+     - Reconocimiento antes que recuerdo: la insignia del logo se repite como
+       ícono de herradura en vez de inventar un ícono distinto por sección.
+     - Visibilidad del estado del sistema: foco visible propio, estados
+       hover/active con retroalimentación de color, aria-live en catálogo.
+     - No depender solo del color (WCAG 1.4.1): el enlace activo del menú no
+       solo cambia de color, cambia de forma (píldora rellena) y lleva
+       aria-current="page"; los enlaces de texto llevan subrayado.
+   ========================================================================== */
+
+/* Enlace "Saltar al contenido": primer elemento tabulable (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 1000;
+  background: #14170f;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.18s ease;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* Foco visible propio: nunca outline:none sin reemplazo (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid #2b3913;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
+  border-radius: 2px;
+}
+
+/* Encabezados: misma paleta y ritmo vertical en todo el sitio */
+h1,
+h2,
+h3,
+h4 {
+  color: #2b3913;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+p {
+  margin: 0 0 1.25rem;
+}
+
+/* Enlaces: subrayado por defecto (WCAG 1.4.1, no depender solo del color),
+   verde de marca, oscurece al pasar el cursor o al enfocar. Los enlaces que
+   no deben llevar subrayado (nav, botones, tarjetas) lo quitan con la
+   utilidad "no-underline" de Tailwind. */
+a {
+  color: #4e6e1c;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover,
+a:focus-visible {
+  color: #2b3913;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skip-link {
+    background: #a6d161;
+    color: #0d100a;
+  }
+
+  :focus-visible {
+    outline-color: #a6d161;
+    box-shadow: 0 0 0 2px #0d100a;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #a6d161;
+  }
+
+  a {
+    color: #74a91e;
+  }
+
+  a:hover,
+  a:focus-visible {
+    color: #a6d161;
+  }
+}
+
+/* ==========================================================================
+   Silueta "sello de cuero": recorta cualquier caja al contorno de escudo del
+   logo (CSS3 clip-path). Se usa en la foto del hero y en las insignias de
+   categoría para que el resto de la página se sienta construida alrededor
+   del propio logo.png, no solo con sus colores.
+   ========================================================================== */
+.shield-frame {
+  border-radius: 0.5rem;
+  clip-path: polygon(
+    50% 0%,
+    82% 9%,
+    100% 34%,
+    91% 64%,
+    76% 90%,
+    50% 100%,
+    24% 90%,
+    9% 64%,
+    0% 34%,
+    18% 9%
+  );
+}
+
+/* ==========================================================================
+   Portada: ventanas diagonales (una por línea de producto)
+   ==========================================================================
+   Cada <li class="ventana"> es un paralelogramo recortado con clip-path.
+   - Móvil/tablet (< 80em): bandas horizontales apiladas con borde superior
+     e inferior inclinados. Cada banda es un bloque de ancho completo.
+   - Escritorio (>= 80em): 8 tiras diagonales en una sola fila a sangre; la
+     que recibe cursor o foco se ensancha (efecto "acordeón").
+   Accesibilidad:
+   - El contraste NO depende de ninguna imagen: cada ventana usa un tono de la
+     rampa del logo (#14170F -> #E9F4D7) y su color de texto se elige para
+     superar 4.5:1 (blanco sobre tonos 1-4: 18.1/12.4/8.8/5.9; tinta #14170F
+     sobre tonos 5-8: 10.8/10.3/13.0/15.9).
+   - El clip-path recorta también el contorno de foco, así que el foco visible
+     se dibuja DENTRO de la ventana, alrededor de la etiqueta (WCAG 2.4.7).
+   - El nombre de la línea siempre está visible (táctil y teclado no tienen
+     hover); la ampliación al pasar el cursor es solo un refuerzo.
+   ========================================================================== */
+.diagonales {
+  --sesgo: 1.75rem;
+  --hueco: 6px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ventana {
+  position: relative;
+  min-height: 7.5rem;
+  margin-top: calc(var(--sesgo) * -1 + var(--hueco));
+  background: var(--fondo);
+  color: var(--texto);
+  clip-path: polygon(0 var(--sesgo), 100% 0, 100% calc(100% - var(--sesgo)), 0 100%);
+  animation: ventana-entra 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i) * 70ms);
+}
+
+.ventana:first-child {
+  margin-top: 0;
+}
+
+/* Trama sutil de rayas diagonales para dar textura sin usar imágenes */
+.ventana::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(115deg, var(--trama) 0 2px, transparent 2px 16px);
+  pointer-events: none;
+}
+
+.ventana a,
+.ventana a:hover,
+.ventana a:focus-visible {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  min-height: inherit;
+  padding: calc(var(--sesgo) + 0.5rem) 1.25rem calc(var(--sesgo) + 0.25rem);
+  color: var(--texto);
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.ventana h3 {
+  margin: 0;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Foto de un producto de la línea, fusionada con la barra: cubre TODA la
+   ventana y una máscara la desvanece hacia la zona del texto, así no hay
+   ningún borde ni rectángulo. Donde va el texto la máscara deja solo el color
+   de la ventana, por lo que el contraste no depende de la imagen. Es
+   decorativa (el nombre del producto va en texto). */
+.ventana-foto {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 45%, rgba(0, 0, 0, 0.95) 100%);
+  mask-image: linear-gradient(to right, transparent 45%, rgba(0, 0, 0, 0.95) 100%);
+}
+
+/* Hasta dos productos por línea: cada foto ocupa ~60% del ancho y se funde con
+   la otra en el centro. Una sola foto ocupa todo el ancho. */
+.ventana-foto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.3);
+  transition: transform 0.5s ease;
+}
+
+.ventana-foto img:first-child:not(:only-child) {
+  width: 62%;
+  -webkit-mask-image: linear-gradient(to right, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 45%, transparent 100%);
+}
+
+.ventana-foto img:last-child:not(:only-child) {
+  left: auto;
+  right: 0;
+  width: 62%;
+  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 45%, transparent 100%);
+}
+
+.ventana a:hover .ventana-foto img,
+.ventana a:focus-visible .ventana-foto img {
+  transform: scale(1.38);
+}
+
+/* Imágenes tipo ilustración (con fondo claro y marco): toman el tono de la
+   ventana en vez de verse como un rectángulo blanco encima. Las fotos reales
+   no llevan esta clase. */
+.ventana-foto img.foto-ilustracion {
+  mix-blend-mode: luminosity;
+  opacity: 0.55;
+  filter: blur(5px);
+}
+
+.ventana-insignia,
+.ventana-etiqueta {
+  position: relative;
+  z-index: 1;
+}
+
+/* Móvil: el texto se queda en la zona sólida, antes del degradado de la foto */
+.ventana-texto {
+  flex: 1;
+  min-width: 0;
+  max-width: 8.5rem;
+}
+
+.ventana-producto {
+  display: -webkit-box;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.ventana-insignia {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--texto);
+  color: var(--fondo);
+  transition: transform 0.3s ease;
+}
+
+.ventana-etiqueta {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.25rem;
+  border-radius: 0.375rem;
+}
+
+.ventana-flecha {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  background: var(--fondo);
+  transition: transform 0.25s ease;
+}
+
+/* Foco visible: contorno interior de alto contraste (mismo color que el texto) */
+.ventana a:focus-visible .ventana-etiqueta {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.ventana a:focus-visible .ventana-flecha,
+.ventana a:hover .ventana-flecha {
+  transform: translateX(4px);
+}
+
+.ventana a:hover .ventana-insignia,
+.ventana a:focus-visible .ventana-insignia {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+/* Rampa de tonos del logo: oscuro -> lima. Texto claro en oscuros, tinta en claros */
+.tono-1 { --fondo: #14170f; --texto: #ffffff; --trama: rgba(255, 255, 255, 0.06); }
+.tono-2 { --fondo: #2b3913; --texto: #ffffff; --trama: rgba(255, 255, 255, 0.06); }
+.tono-3 { --fondo: #3a5214; --texto: #ffffff; --trama: rgba(255, 255, 255, 0.07); }
+.tono-4 { --fondo: #4e6e1c; --texto: #ffffff; --trama: rgba(255, 255, 255, 0.08); }
+.tono-5 { --fondo: #93dc1d; --texto: #14170f; --trama: rgba(20, 23, 15, 0.07); }
+.tono-6 { --fondo: #a6d161; --texto: #14170f; --trama: rgba(20, 23, 15, 0.07); }
+.tono-7 { --fondo: #c5e68f; --texto: #14170f; --trama: rgba(20, 23, 15, 0.06); }
+.tono-8 { --fondo: #e9f4d7; --texto: #14170f; --trama: rgba(20, 23, 15, 0.06); }
+
+@keyframes ventana-entra {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+}
+
+/* ==========================================================================
+   Diseño adaptable de la portada (mobile-first)
+     < 40em   bandas apiladas de ancho completo (arriba)
+     >= 40em  rejilla de ventanas diagonales: 2 columnas
+     >= 64em  rejilla de 4 columnas (2 filas)
+     >= 80em  8 tiras en una fila con efecto acordeón
+   Las tres últimas comparten el mismo diseño de "tarjeta vertical" (icono
+   arriba, foto que se desvanece hacia abajo, texto abajo).
+   ========================================================================== */
+@media (min-width: 40em) {
+  .diagonales {
+    --sesgo: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 17rem;
+    row-gap: var(--hueco);
+    margin-inline: calc(var(--sesgo) * -1);
+  }
+
+  .ventana {
+    --pad-izq: 0.9rem;
+    --ins-izq: var(--sesgo);
+    min-width: 0;
+    min-height: 0;
+    margin-top: 0;
+    margin-left: calc(var(--sesgo) * -1 + var(--hueco));
+    clip-path: polygon(var(--sesgo) 0, 100% 0, calc(100% - var(--sesgo)) 100%, 0 100%);
+  }
+
+  /* Primera columna: su base queda fuera de pantalla por el sesgo a sangre,
+     así que se compensa para que el texto no se recorte */
+  .ventana:nth-child(2n + 1) {
+    --pad-izq: calc(0.9rem + var(--sesgo));
+    --ins-izq: 0px;
+    margin-left: 0;
+  }
+
+  .ventana a,
+  .ventana a:hover,
+  .ventana a:focus-visible {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem 0.9rem 1.5rem var(--pad-izq);
+  }
+
+  .ventana-insignia {
+    align-self: flex-start;
+    margin-left: var(--ins-izq);
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  /* La foto se desvanece hacia abajo, donde va el texto */
+  .ventana-foto {
+    -webkit-mask-image: linear-gradient(to top, transparent 32%, rgba(0, 0, 0, 0.95) 78%);
+    mask-image: linear-gradient(to top, transparent 32%, rgba(0, 0, 0, 0.95) 78%);
+  }
+
+  .ventana-texto {
+    max-width: none;
+  }
+
+  /* El nombre ocupa todo el ancho útil y la flecha va debajo */
+  .ventana-etiqueta {
+    flex: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-self: stretch;
+    gap: 0.6rem;
+    margin-right: calc(var(--sesgo) * 0.8);
+  }
+
+  .ventana-flecha {
+    align-self: flex-start;
+  }
+
+  .ventana h3 {
+    font-size: 1.15rem;
+    hyphens: manual;
+  }
+
+  .ventana-producto {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .diagonales {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 15rem;
+  }
+
+  /* Con 4 columnas la primera de cada fila es 4n+1 (no 2n+1) */
+  .ventana:nth-child(n) {
+    --pad-izq: 0.9rem;
+    --ins-izq: var(--sesgo);
+    margin-left: calc(var(--sesgo) * -1 + var(--hueco));
+  }
+
+  .ventana:nth-child(4n + 1) {
+    --pad-izq: calc(0.9rem + var(--sesgo));
+    --ins-izq: 0px;
+    margin-left: 0;
+  }
+
+  .ventana h3 {
+    font-size: 1.05rem;
+  }
+
+  .ventana-producto {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Escritorio ancho: fila de tiras a sangre con efecto acordeón */
+@media (min-width: 80em) {
+  .diagonales {
+    display: flex;
+    flex-direction: row;
+    height: clamp(22rem, calc(100svh - 21rem), 32rem);
+  }
+
+  .ventana:nth-child(n) {
+    --pad-izq: 0.9rem;
+    --ins-izq: var(--sesgo);
+    flex: 1 1 0;
+    margin-left: calc(var(--sesgo) * -1 + var(--hueco));
+    transition: flex-grow 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .ventana:first-child {
+    --pad-izq: calc(0.9rem + var(--sesgo));
+    --ins-izq: 0px;
+    margin-left: 0;
+  }
+
+  .ventana:focus-within {
+    flex-grow: 1.8;
+  }
+
+  /* Cabecera compacta: las acciones van en columna a la derecha para que las
+     ventanas queden completas en la primera pantalla */
+  .portada-acciones {
+    flex-direction: column;
+  }
+}
+
+/* El ensanche por hover solo donde existe un puntero real */
+@media (min-width: 80em) and (hover: hover) {
+  .ventana:hover {
+    flex-grow: 1.8;
+  }
+}
+
+/* Banda de cierre con borde superior diagonal (superpuesta a la sección previa) */
+.corte-arriba {
+  --corte: 2.5rem;
+  margin-top: calc(var(--corte) * -1);
+  padding-top: var(--corte);
+  clip-path: polygon(0 var(--corte), 100% 0, 100% 100%, 0 100%);
+}
+
+/* Badge del carrito: retroalimentación visual inmediata al agregar/quitar un producto
+   (además del texto "✓ Agregado" en el botón, que es lo que confirma la acción para
+   quien usa lector de pantalla; el pulso es solo refuerzo, nunca el único indicador). */
+#contadorCarrito.carrito-pulso {
+  animation: carrito-pulso 0.4s ease-out;
+}
+
+@keyframes carrito-pulso {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Movimiento: sin retardos escalonados cuando se pide reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .ventana {
+    animation-delay: 0s !important;
+  }
+}
+
+/* Movimiento: respeta la preferencia del sistema (WCAG 2.3.3 / 2.2.2) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

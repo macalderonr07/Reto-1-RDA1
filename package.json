@@ -1,0 +1,19 @@
+{
+  "name": "comercial-elite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catalogo con carrito de cotizacion de Comercial Elite (Tailwind, sitio estatico)",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "verificar:estatico": "node scripts/verificar-estatico.mjs",
+    "verificar:html": "html-validate index.html catalogo.html producto.html carrito.html registro.html contacto.html nosotros.html",
+    "verificar:e2e": "node scripts/verificar-e2e.mjs",
+    "verificar": "npm run verificar:estatico && npm run verificar:html && npm run verificar:e2e",
+    "preparar-sitio": "node scripts/preparar-sitio.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0",
+    "html-validate": "^11.16.2",
+    "playwright": "^1.63.0"
+  }
+}

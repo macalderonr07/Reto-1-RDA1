@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrito — Comercial Elite</title>
+  <meta name="description" content="Revisa, edita y envía tu pedido de insumos de Comercial Elite por WhatsApp o correo.">
+  <link rel="canonical" href="https://www.comercialelite.com/carrito.html">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "media",
+      theme: {
+        // El Play CDN no genera las variantes arbitrarias min-[Nem]:, así que los
+        // puntos de quiebre en em se declaran como pantallas con nombre (orden ascendente).
+        screens: {
+          s30: "30em",
+          sm: "40em",
+          s45: "45em",
+          md: "48em",
+          s55: "55em",
+          s60: "60em",
+          lg: "64em",
+          xl: "80em",
+          "2xl": "96em",
+        },
+        extend: {
+          colors: {
+            elite: {
+              lime: "#93DC1D",
+              DEFAULT: "#4E6E1C",
+              medium: "#3A5214",
+              dark: "#2B3913",
+              tint: "#E9F4D7",
+              border: "#A7C577",
+              borderstrong: "#719438",
+              ink: "#14170F",
+              text: "#1A1A1A",
+              cuero: "#8B5E34",
+              cuerotint: "#F2E4D4",
+            },
+            elitenight: {
+              DEFAULT: "#74A91E",
+              medium: "#90C639",
+              dark: "#A6D161",
+              tint: "#273414",
+              border: "#5E7538",
+              bg: "#0D100A",
+              text: "#EDF3E6",
+              cuero: "#D9A066",
+              cuerotint: "#2E2013",
+            },
+            error: { DEFAULT: "#B3261E", tint: "#FBECEB", dark: "#FF8A80", darktint: "#3A1613" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white font-sans leading-[1.55] text-elite-text antialiased dark:bg-elitenight-bg dark:text-elitenight-text">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50 bg-elite-ink">
+    <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-5 px-4 py-2.5">
+      <a class="inline-flex items-center gap-3 no-underline" href="index.html">
+        <img class="h-14 w-14 shrink-0" src="assets/img/logo.png" alt="Comercial Elite" width="412" height="412">
+        <span class="text-lg font-bold tracking-wide text-white">Comercial Elite</span>
+      </a>
+      <nav class="flex flex-wrap items-center gap-2" aria-label="Principal">
+        <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-white/30 bg-white/10 px-3 font-semibold text-white md:hidden" id="botonMenu" aria-expanded="false" aria-controls="listaNav">
+          <span aria-hidden="true">☰</span> Menú
+        </button>
+        <ul class="hidden w-full flex-col gap-1 border-t border-white/15 pt-3 md:flex md:w-auto md:flex-row md:gap-2 md:border-0 md:pt-0" id="listaNav">
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="index.html">Inicio</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="catalogo.html">Catálogo</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="nosotros.html">Nosotros</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="relative inline-flex min-h-11 items-center gap-1.5 font-semibold text-white no-underline hover:text-elite-lime" href="carrito.html" id="enlaceCarrito" aria-label="Carrito, 0 productos" aria-current="page">
+        <span aria-hidden="true">🛒</span> Carrito
+        <span class="ml-1 inline-flex min-h-6 min-w-6 items-center justify-center rounded-full bg-elite-lime px-1.5 text-xs font-bold text-elite-ink" id="contadorCarrito" aria-hidden="true">0</span>
+      </a>
+      <a class="inline-flex min-h-11 items-center gap-1.5 font-semibold text-white no-underline hover:text-elite-lime" href="tel:+593987855906">
+        <span aria-hidden="true">📞</span> 098&nbsp;785&nbsp;5906
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <nav class="mx-auto max-w-6xl px-4 py-3 text-sm" aria-label="Miga de pan">
+      <ol class="flex flex-wrap gap-1.5">
+        <li class="after:mx-1.5 after:text-elite-border after:content-['›'] last:after:content-none dark:after:text-elitenight-border"><a href="index.html">Inicio</a></li>
+        <li class="font-semibold" aria-current="page">Carrito</li>
+      </ol>
+    </nav>
+
+    <div class="mx-auto max-w-6xl px-4 pb-14">
+      <h1 class="text-3xl font-bold md:text-4xl">Tu carrito</h1>
+
+      <p class="mt-3 rounded-lg border-2 border-error bg-error-tint p-4 font-semibold text-error dark:border-error-dark dark:bg-error-darktint dark:text-error-dark" id="avisoAlmacenamiento" role="alert" hidden></p>
+
+      <div class="grid items-start gap-8 s55:grid-cols-[1fr_20rem]">
+        <div>
+          <p id="carritoVacio" hidden>
+            Tu carrito está vacío. <a href="catalogo.html">Ver catálogo</a>.
+          </p>
+
+          <ul class="flex flex-col gap-4" id="listaCarrito" aria-live="polite"></ul>
+
+          <p class="mt-5">
+            <button type="button" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-2 border-error px-6 py-2.5 font-bold text-error transition-colors hover:bg-error-tint dark:border-error-dark dark:text-error-dark dark:hover:bg-error-darktint" id="botonVaciarCarrito">
+              <span aria-hidden="true">🗑</span> Vaciar carrito
+            </button>
+          </p>
+
+          <section class="mt-10" id="seccionHistorial" aria-labelledby="titulo-historial" hidden>
+            <h2 class="text-xl font-bold" id="titulo-historial">Historial de pedidos enviados</h2>
+            <p class="mb-0" id="avisoHistorial" role="alert" hidden>No se pudo cargar el historial de pedidos en este navegador.</p>
+            <ul class="flex flex-col gap-2" id="listaHistorial"></ul>
+          </section>
+        </div>
+
+        <aside class="flex flex-col gap-5">
+          <div class="rounded-lg border-2 border-elite-cuero bg-elite-cuerotint p-5 dark:border-elitenight-cuero dark:bg-elitenight-cuerotint">
+            <p class="mb-1.5 font-semibold" id="contadorItemsCarrito">0 productos</p>
+            <p class="mb-0 text-2xl font-bold text-elite-cuero dark:text-elitenight-cuero" id="totalCarrito" aria-live="polite">$0.00</p>
+          </div>
+
+          <p class="mb-0 text-sm" id="ultimaActualizacion"></p>
+
+          <form id="formularioCheckout" novalidate>
+            <h2 class="text-xl font-bold">Enviar pedido</h2>
+            <p class="mb-5 rounded-lg border-2 border-elite-dark bg-elite-tint p-4 dark:border-elitenight-dark dark:bg-elitenight-tint" id="estadoCheckout" role="alert" hidden></p>
+
+            <div class="campo mb-5">
+              <label class="mb-1.5 block font-bold" for="nombreCheckout">Nombre o empresa que cotiza</label>
+              <input
+                class="min-h-11 w-full rounded-lg border-2 border-elite-borderstrong bg-white px-3 py-2 text-elite-text focus-visible:border-elite-dark dark:border-elitenight-border dark:bg-elitenight-bg dark:text-elitenight-text dark:focus-visible:border-elitenight-dark"
+                type="text"
+                id="nombreCheckout"
+                name="nombre"
+                autocomplete="name"
+                required
+                aria-describedby="errorNombreCheckout"
+              >
+              <span class="mt-1.5 block text-sm font-semibold text-error empty:hidden dark:text-error-dark" id="errorNombreCheckout"></span>
+            </div>
+
+            <div class="campo mb-5">
+              <label class="mb-1.5 block font-bold" for="correoCheckout">Correo electrónico</label>
+              <input
+                class="min-h-11 w-full rounded-lg border-2 border-elite-borderstrong bg-white px-3 py-2 text-elite-text focus-visible:border-elite-dark dark:border-elitenight-border dark:bg-elitenight-bg dark:text-elitenight-text dark:focus-visible:border-elitenight-dark"
+                type="email"
+                id="correoCheckout"
+                name="correo"
+                autocomplete="email"
+                required
+                aria-describedby="errorCorreoCheckout"
+              >
+              <span class="mt-1.5 block text-sm font-semibold text-error empty:hidden dark:text-error-dark" id="errorCorreoCheckout"></span>
+            </div>
+
+            <div class="campo mb-5">
+              <label class="mb-1.5 block font-bold" for="telefonoCheckout">
+                Teléfono <span class="text-sm font-normal">(opcional)</span>
+              </label>
+              <input
+                class="min-h-11 w-full rounded-lg border-2 border-elite-borderstrong bg-white px-3 py-2 text-elite-text focus-visible:border-elite-dark dark:border-elitenight-border dark:bg-elitenight-bg dark:text-elitenight-text dark:focus-visible:border-elitenight-dark"
+                type="tel"
+                id="telefonoCheckout"
+                name="telefono"
+                autocomplete="tel"
+                placeholder="0999999999"
+                aria-describedby="errorTelefonoCheckout"
+              >
+              <span class="mt-1.5 block text-sm font-semibold text-error empty:hidden dark:text-error-dark" id="errorTelefonoCheckout"></span>
+            </div>
+
+            <div class="flex flex-col gap-3">
+              <button type="submit" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-elite-lime px-6 py-2.5 font-bold text-elite-ink no-underline transition hover:brightness-90 active:brightness-75" id="botonEnviarWhatsApp">
+                Enviar por WhatsApp
+              </button>
+              <button type="button" class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-2 border-elite-borderstrong bg-white px-6 py-2.5 font-bold text-elite-ink no-underline transition-colors hover:bg-elite-tint dark:border-elitenight-border dark:bg-elitenight-bg dark:text-elitenight-text dark:hover:bg-elitenight-tint" id="botonEnviarCorreo">
+                Enviar por correo
+              </button>
+            </div>
+          </form>
+
+          <p class="mb-0 text-sm">¿Quieres guardar tus datos para la próxima? <a href="registro.html">Regístrate</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-elite-ink py-8 text-white dark:bg-elitenight-tint dark:text-elitenight-text">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 s45:grid-cols-3">
+      <div>
+        <h2 class="flex items-center gap-2 text-white dark:text-elitenight-dark"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg> Comercial Elite</h2>
+        <address class="not-italic">
+          Calle Esmeraldas y Venezuela, Quito, Ecuador<br>
+          <a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="tel:+593987855906">098&nbsp;785&nbsp;5906</a> (WhatsApp)<br>
+          <a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="mailto:comercialelite313@gmail.com">comercialelite313@gmail.com</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="text-white dark:text-elitenight-dark">Horario</h2>
+        <ul>
+          <li>Lunes a viernes: 06:30 – 17:30</li>
+          <li>Sábado: 07:00 – 13:30</li>
+        </ul>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="assets/catalogo.pdf">Descargar catálogo (PDF, 4 KB)</a></p>
+      </div>
+      <div>
+        <h2 class="text-white dark:text-elitenight-dark">Síguenos</h2>
+        <ul class="flex flex-wrap gap-3">
+          <li><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="https://www.facebook.com/comercialelite" target="_blank" rel="noopener noreferrer">Facebook <span class="sr-only">(se abre en una pestaña nueva)</span></a></li>
+          <li><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="https://www.instagram.com/comercialelite" target="_blank" rel="noopener noreferrer">Instagram <span class="sr-only">(se abre en una pestaña nueva)</span></a></li>
+        </ul>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="contacto.html">Cómo llegar y contacto</a></p>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="registro.html">Registrarse</a></p>
+      </div>
+    </div>
+    <div class="mx-auto mt-8 max-w-6xl border-t border-white/25 px-4 pt-5 text-sm">
+      <p class="mb-0">© 2026 Comercial Elite. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validacion.js"></script>
+  <script src="js/encabezado.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

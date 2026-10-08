@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comercial Elite — Insumos para calzado y marroquinería en Quito</title>
+  <meta name="description" content="Comercial Elite distribuye cueros, sintéticos, suelas, adhesivos, herrajes y herramienta menor para talleres, fábricas y artesanos de calzado en Quito.">
+  <link rel="canonical" href="https://www.comercialelite.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Comercial Elite — Insumos para calzado y marroquinería">
+  <meta property="og:description" content="Catálogo de cueros, sintéticos, suelas, adhesivos, herrajes y herramienta menor para talleres y artesanos en Quito.">
+  <meta property="og:locale" content="es_EC">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "media",
+      theme: {
+        // El Play CDN no genera las variantes arbitrarias min-[Nem]:, así que los
+        // puntos de quiebre en em se declaran como pantallas con nombre (orden ascendente).
+        screens: {
+          s30: "30em",
+          sm: "40em",
+          s45: "45em",
+          md: "48em",
+          s55: "55em",
+          s60: "60em",
+          lg: "64em",
+          xl: "80em",
+          "2xl": "96em",
+        },
+        extend: {
+          colors: {
+            elite: {
+              lime: "#93DC1D",
+              DEFAULT: "#4E6E1C",
+              medium: "#3A5214",
+              dark: "#2B3913",
+              tint: "#E9F4D7",
+              border: "#A7C577",
+              borderstrong: "#719438",
+              ink: "#14170F",
+              text: "#1A1A1A",
+              cuero: "#8B5E34",
+              cuerotint: "#F2E4D4",
+            },
+            elitenight: {
+              DEFAULT: "#74A91E",
+              medium: "#90C639",
+              dark: "#A6D161",
+              tint: "#273414",
+              border: "#5E7538",
+              bg: "#0D100A",
+              text: "#EDF3E6",
+              cuero: "#D9A066",
+              cuerotint: "#2E2013",
+            },
+            error: { DEFAULT: "#B3261E", tint: "#FBECEB", dark: "#FF8A80", darktint: "#3A1613" },
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Comercial Elite",
+    "image": "https://www.comercialelite.com/assets/img/logo.png",
+    "telephone": "+593999999999",
+    "email": "ventas@comercialelite.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Los Curtidores N45-12 y Av. de los Talabarteros",
+      "addressLocality": "Quito",
+      "addressCountry": "EC"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00" }
+    ],
+    "url": "https://www.comercialelite.com/index.html"
+  }
+  </script>
+</head>
+<body class="bg-white font-sans leading-[1.55] text-elite-text antialiased dark:bg-elitenight-bg dark:text-elitenight-text">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50 bg-elite-ink">
+    <div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-5 px-4 py-2.5">
+      <a class="inline-flex items-center gap-3 no-underline" href="index.html">
+        <img class="h-14 w-14 shrink-0" src="assets/img/logo.png" alt="Comercial Elite" width="412" height="412">
+        <span class="text-lg font-bold tracking-wide text-white">Comercial Elite</span>
+      </a>
+      <nav class="flex flex-wrap items-center gap-2" aria-label="Principal">
+        <button type="button" class="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-white/30 bg-white/10 px-3 font-semibold text-white md:hidden" id="botonMenu" aria-expanded="false" aria-controls="listaNav">
+          <span aria-hidden="true">☰</span> Menú
+        </button>
+        <ul class="hidden w-full flex-col gap-1 border-t border-white/15 pt-3 md:flex md:w-auto md:flex-row md:gap-2 md:border-0 md:pt-0" id="listaNav">
+          <li><a class="flex min-h-11 items-center rounded-full bg-elite-lime px-4 font-bold text-elite-ink no-underline" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="catalogo.html">Catálogo</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="nosotros.html">Nosotros</a></li>
+          <li><a class="flex min-h-11 items-center rounded-full px-4 font-semibold text-elite-lime no-underline hover:bg-white/10" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="relative inline-flex min-h-11 items-center gap-1.5 font-semibold text-white no-underline hover:text-elite-lime" href="carrito.html" id="enlaceCarrito" aria-label="Carrito, 0 productos">
+        <span aria-hidden="true">🛒</span> Carrito
+        <span class="ml-1 inline-flex min-h-6 min-w-6 items-center justify-center rounded-full bg-elite-lime px-1.5 text-xs font-bold text-elite-ink" id="contadorCarrito" aria-hidden="true">0</span>
+      </a>
+      <a class="inline-flex min-h-11 items-center gap-1.5 font-semibold text-white no-underline hover:text-elite-lime" href="tel:+593987855906">
+        <span aria-hidden="true">📞</span> 098&nbsp;785&nbsp;5906
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Portada: cabecera breve + 8 ventanas diagonales (una por línea de producto).
+         IHC: la primera pantalla responde "¿qué venden?" sin scroll (visibilidad,
+         reconocimiento antes que recuerdo); cada ventana entera es un objetivo
+         de clic grande (Fitts); el nombre de la línea va siempre visible, no solo
+         al pasar el cursor, para que funcione en táctil y con teclado. -->
+    <section class="portada overflow-hidden bg-elite-ink text-white" aria-labelledby="titulo-hero">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-x-10 gap-y-5 px-4 pt-6 pb-8">
+        <div class="max-w-2xl">
+          <span class="inline-flex items-center gap-2 rounded-full bg-elite-lime px-4 py-1.5 text-sm font-bold text-elite-ink">
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+            Cueros y marroquinería en Quito
+          </span>
+          <h1 class="mt-3 mb-2 text-2xl font-bold text-white s30:text-3xl lg:text-4xl" id="titulo-hero">Insumos para <span class="text-elite-lime">calzado</span> y marroquinería en Quito</h1>
+          <p class="mb-0 text-base text-elite-tint md:text-lg">Para talleres, fábricas pequeñas y artesanos. <strong class="font-semibold text-white">Elige una línea para ver sus productos.</strong></p>
+        </div>
+        <!-- En móvil se ocultan para que las ventanas aparezcan en la primera pantalla;
+             las mismas acciones están en el menú y en la banda final. -->
+        <div class="portada-acciones hidden gap-3 md:flex">
+          <a class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-elite-lime px-6 py-2.5 font-bold text-elite-ink no-underline transition hover:text-elite-ink hover:brightness-90 focus-visible:text-elite-ink active:brightness-75" href="catalogo.html">Ver catálogo completo</a>
+          <a class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-2 border-white px-6 py-2.5 font-bold text-white no-underline transition-colors hover:bg-white/15 hover:text-white focus-visible:text-white" href="https://wa.me/593999999999?text=Hola%2C%20quiero%20cotizar%20insumos%20de%20Comercial%20Elite" target="_blank" rel="noopener noreferrer">
+            Cotizar por WhatsApp <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </div>
+      </div>
+
+      <h2 class="sr-only">Nuestras líneas de producto</h2>
+      <ul class="diagonales">
+          <li class="ventana tono-1" data-cat="cueros" style="--i:0">
+            <a href="catalogo.html?cat=cueros">
+              <span class="ventana-foto" aria-hidden="true"><img src="assets/img/ce-1042-cuero-graso.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-4 3 2 4-1 4 2 7h10l2-7-1-4 2-4-4-3c-1 1.5-2 2-4 2s-3-.5-4-2z"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Cueros</h3>
+                  <span class="ventana-producto">Cuero graso natural</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-2" data-cat="sinteticos" style="--i:1">
+            <a href="catalogo.html?cat=sinteticos">
+              <span class="ventana-foto" aria-hidden="true"><img src="assets/img/ce-2010-sintetico-pu.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Sintéticos</h3>
+                  <span class="ventana-producto">Sintético PU texturizado</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-3" data-cat="suelas" style="--i:2">
+            <a href="catalogo.html?cat=suelas">
+              <span class="ventana-foto" aria-hidden="true"><img src="assets/img/ce-3005-suela-sr220.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3c-3 0-4.5 3-4 6s2.5 4 2.5 7c0 3 1 5 3.5 5s3.5-2 3.5-5c0-2 2-4 2-7.5C16.5 5 15 3 12 3z"/><path d="M9 8h4M9 12h4M9.5 16h3"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Suelas</h3>
+                  <span class="ventana-producto">Suela de caucho antideslizante modelo SR-220</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-4" data-cat="plantillas" style="--i:3">
+            <a href="catalogo.html?cat=plantillas">
+              <span class="ventana-foto" aria-hidden="true"><img src="assets/img/ce-4001-plantilla-armado.png" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14c0-3 2-5 5-5h5c3 0 4-3 7-3 2 0 3 1 3 3v4c0 3-2 4-4 4H8c-3 0-5-1-5-3z"/><path d="M8 14h9" stroke-dasharray="2 2.5"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Plantillas</h3>
+                  <span class="ventana-producto">Plantilla de armado prensada</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-5" data-cat="hilos" style="--i:4">
+            <a href="catalogo.html?cat=hilos">
+              <span class="ventana-foto" aria-hidden="true"><img class="foto-ilustracion" src="assets/img/ce-5001-hilo-nylon.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12M6 20h12M8 4v16M16 4v16M8 8.5l8 2M8 12.5l8 2M8 16.5l8 2"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Hilos</h3>
+                  <span class="ventana-producto">Hilo encerado de nylon 210D</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-6" data-cat="adhesivos" style="--i:5">
+            <a href="catalogo.html?cat=adhesivos">
+              <span class="ventana-foto" aria-hidden="true"><img class="foto-ilustracion" src="assets/img/ce-6001-adhesivo-contacto.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3h5v3l2.5 3v10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9l2.5-3z"/><path d="M7 13h10"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Adhesivos</h3>
+                  <span class="ventana-producto">Adhesivo de contacto base solvente</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-7" data-cat="herrajes" style="--i:6">
+            <a href="catalogo.html?cat=herrajes">
+              <span class="ventana-foto" aria-hidden="true"><img class="foto-ilustracion" src="assets/img/ce-7001-ojalillo.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="17" height="12" rx="2"/><path d="M10 6v12M10 12h7"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Herrajes</h3>
+                  <span class="ventana-producto">Ojalillo metálico niquelado</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+          <li class="ventana tono-8" data-cat="herramientas" style="--i:7">
+            <a href="catalogo.html?cat=herramientas">
+              <span class="ventana-foto" aria-hidden="true"><img class="foto-ilustracion" src="assets/img/ce-8001-cuchilla.webp" alt=""></span>
+              <span class="ventana-insignia shield-frame" aria-hidden="true">
+                <svg focusable="false" viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4l7 7-3 3-7-7z"/><path d="M4.5 19.5L14 10"/></svg>
+              </span>
+              <div class="ventana-etiqueta">
+                <div class="ventana-texto">
+                  <h3>Herramienta menor</h3>
+                  <span class="ventana-producto">Cuchilla de desbastar profesional</span>
+                </div>
+                <span class="ventana-flecha" aria-hidden="true"><svg focusable="false" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </div>
+            </a>
+          </li>
+      </ul>
+    </section>
+
+    <section class="py-14" aria-labelledby="titulo-novedades">
+      <div class="mx-auto max-w-6xl px-4">
+        <header class="mb-8">
+          <h2 class="text-2xl font-bold md:text-3xl" id="titulo-novedades">Novedades</h2>
+        </header>
+        <ul id="listaNovedades">
+          <li class="flex flex-wrap items-baseline gap-3 border-b border-elite-border py-2 dark:border-elitenight-border">
+            <time class="font-bold whitespace-nowrap text-elite-dark dark:text-elitenight-dark" datetime="2026-09-15">15 sep 2026</time>
+            <a href="producto.html?id=CE-1042">Nuevo ingreso: Cuero graso natural</a>
+          </li>
+          <li class="flex flex-wrap items-baseline gap-3 border-b border-elite-border py-2 dark:border-elitenight-border">
+            <time class="font-bold whitespace-nowrap text-elite-dark dark:text-elitenight-dark" datetime="2026-09-02">02 sep 2026</time>
+            <a href="producto.html?id=CE-3006">Nuevo ingreso: Suela EVA liviana</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-elite-tint dark:bg-elitenight-tint" aria-labelledby="titulo-porque">
+      <div class="mx-auto max-w-6xl px-4 py-14">
+        <header class="mb-8">
+          <h2 class="text-2xl font-bold md:text-3xl" id="titulo-porque">Por qué Comercial Elite</h2>
+        </header>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <article class="rounded-lg border border-elite-border border-t-4 border-t-elite-lime bg-white p-6 shadow-[0_1px_3px_rgba(26,26,26,0.12)] dark:border-elitenight-border dark:border-t-elitenight-medium dark:bg-elitenight-bg">
+            <h3 class="flex items-center gap-2 text-lg font-semibold md:text-xl">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-elite dark:text-elitenight" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+              Trayectoria local
+            </h3>
+            <p class="mb-0">Más de 20 años surtiendo a talleres y fábricas de calzado en Quito, con relación directa y sin intermediarios.</p>
+          </article>
+          <article class="rounded-lg border border-elite-border border-t-4 border-t-elite-lime bg-white p-6 shadow-[0_1px_3px_rgba(26,26,26,0.12)] dark:border-elitenight-border dark:border-t-elitenight-medium dark:bg-elitenight-bg">
+            <h3 class="flex items-center gap-2 text-lg font-semibold md:text-xl">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-elite dark:text-elitenight" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+              Marcas representadas
+            </h3>
+            <p class="mb-0">Distribución oficial de insumos de proveedores reconocidos en cueros, suelas y adhesivos industriales.</p>
+          </article>
+          <article class="rounded-lg border border-elite-border border-t-4 border-t-elite-lime bg-white p-6 shadow-[0_1px_3px_rgba(26,26,26,0.12)] dark:border-elitenight-border dark:border-t-elitenight-medium dark:bg-elitenight-bg">
+            <h3 class="flex items-center gap-2 text-lg font-semibold md:text-xl">
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-elite dark:text-elitenight" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+              Stock continuo
+            </h3>
+            <p class="mb-0">Reposición constante de las líneas de mayor rotación, con novedades publicadas apenas ingresan a bodega.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cierre: banda lima con corte diagonal que repite el lenguaje de la portada
+         y deja una única acción clara (cotizar). -->
+    <section class="corte-arriba bg-elite-lime text-elite-ink" aria-labelledby="titulo-cta">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-4 pb-12 pt-6">
+        <div class="max-w-xl">
+          <h2 class="mb-2 text-2xl font-bold text-elite-ink md:text-3xl" id="titulo-cta">¿No encuentras lo que buscas?</h2>
+          <p class="mb-0 text-lg">Escríbenos y cotizamos tu pedido de insumos con stock y precio al día.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-elite-ink px-6 py-2.5 font-bold text-white no-underline transition hover:bg-elite-dark hover:text-white focus-visible:text-white" href="https://wa.me/593999999999?text=Hola%2C%20quiero%20cotizar%20insumos%20de%20Comercial%20Elite" target="_blank" rel="noopener noreferrer">
+            Cotizar por WhatsApp <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+          <a class="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border-2 border-elite-ink px-6 py-2.5 font-bold text-elite-ink no-underline transition-colors hover:bg-elite-ink/10 hover:text-elite-ink focus-visible:text-elite-ink" href="catalogo.html">Ver catálogo completo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-elite-ink py-8 text-white dark:bg-elitenight-tint dark:text-elitenight-text">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 s45:grid-cols-3">
+      <div>
+        <h2 class="flex items-center gap-2 text-white dark:text-elitenight-dark"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18.14,8.7 A7.5,7.5 0 1 1 5.86,8.7"/><circle cx="18.14" cy="8.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="5.86" cy="8.7" r="0.9" fill="currentColor" stroke="none"/></svg> Comercial Elite</h2>
+        <address class="not-italic">
+          Calle Esmeraldas y Venezuela, Quito, Ecuador<br>
+          <a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="tel:+593987855906">098&nbsp;785&nbsp;5906</a> (WhatsApp)<br>
+          <a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="mailto:comercialelite313@gmail.com">comercialelite313@gmail.com</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="text-white dark:text-elitenight-dark">Horario</h2>
+        <ul>
+          <li>Lunes a viernes: 06:30 – 17:30</li>
+          <li>Sábado: 07:00 – 13:30</li>
+        </ul>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="assets/catalogo.pdf">Descargar catálogo (PDF, 4 KB)</a></p>
+      </div>
+      <div>
+        <h2 class="text-white dark:text-elitenight-dark">Síguenos</h2>
+        <ul class="flex flex-wrap gap-3">
+          <li><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="https://www.facebook.com/comercialelite" target="_blank" rel="noopener noreferrer">Facebook <span class="sr-only">(se abre en una pestaña nueva)</span></a></li>
+          <li><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="https://www.instagram.com/comercialelite" target="_blank" rel="noopener noreferrer">Instagram <span class="sr-only">(se abre en una pestaña nueva)</span></a></li>
+        </ul>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="contacto.html">Cómo llegar y contacto</a></p>
+        <p class="mb-0"><a class="text-white hover:text-elite-lime focus-visible:text-elite-lime dark:text-elitenight-text dark:hover:text-elitenight-dark dark:focus-visible:text-elitenight-dark" href="registro.html">Registrarse</a></p>
+      </div>
+    </div>
+    <div class="mx-auto mt-8 max-w-6xl border-t border-white/25 px-4 pt-5 text-sm">
+      <p class="mb-0">© 2026 Comercial Elite. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/encabezado.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>
